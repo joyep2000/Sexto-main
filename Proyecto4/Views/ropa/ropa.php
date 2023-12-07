@@ -1,15 +1,9 @@
 <?php require_once('../html/head2.php') ?>
-
-
-
-
 <div class="row">
-
     <div class="col-lg-8 d-flex align-items-stretch">
         <div class="card w-100">
             <div class="card-body p-4">
                 <h5 class="card-title fw-semibold mb-4">Lista de Prendas</h5>
-
                 <div class="table-responsive">
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal_ropa">
                         Nueva Prenda
@@ -41,7 +35,6 @@
                             </tr>
                         </thead>
                         <tbody id="tabla_ropas">
-
                         </tbody>
                     </table>
                 </div>
@@ -53,7 +46,6 @@
 <!-- Ventana Modal-->
 
 <!-- Button trigger modal -->
-
 
 <!-- Modal -->
 <div class="modal fade" id="Modal_ropa" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
