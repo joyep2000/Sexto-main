@@ -57,6 +57,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    <input type="hidden" name="RopaId" id="RopaId">
                     <div class="form-group">
                         <label for="Codigo">Codigo</label>
                         <input type="text" required class="form-control" id="Codigo" name="Codigo" placeholder="Codigo">
@@ -106,6 +107,4 @@
 </div>
 
 <?php require_once('../html/script2.php') ?>
-
-<script src="ropa.controller.js"></script>
 <script src="ropa.model.js"></script>

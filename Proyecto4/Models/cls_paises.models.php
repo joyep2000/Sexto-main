@@ -1,13 +1,13 @@
 <?php
 require_once('cls_conexion.model.php');
-class Clase_Ropa
+class Clase_Paises
 {
     public function todos()
     {
         try {
             $con = new Clase_Conectar_Base_Datos();
             $con = $con->ProcedimientoConectar();
-            $cadena = "SELECT * FROM `ropa`";
+            $cadena = "SELECT * FROM `Pais`";
             $result = mysqli_query($con, $cadena);
             return $result;
         } catch (Throwable $th) {
@@ -16,12 +16,12 @@ class Clase_Ropa
             $con->close();
         }
     }
-    public function uno($RopaId)
+    public function uno($PaisId)
     {
         try {
             $con = new Clase_Conectar_Base_Datos();
             $con = $con->ProcedimientoConectar();
-            $cadena = "SELECT * FROM `ropa` WHERE RopaId=$RopaId";
+            $cadena = "SELECT * FROM `Pais` WHERE PaisId=$PaisId";
             $result = mysqli_query($con, $cadena);
             return $result;
         } catch (Throwable $th) {
@@ -30,12 +30,12 @@ class Clase_Ropa
             $con->close();
         }
     }
-    public function insertar($Codigo, $Cantidad, $Tipo, $Modelo, $Precio, $Talla, $Color, $Marca)
+    public function insertar($Nombre)
     {
         try {
             $con = new Clase_Conectar_Base_Datos();
             $con = $con->ProcedimientoConectar();
-            $cadena = "INSERT INTO `ropa`(`Codigo`, `Cantidad`, `Tipo`, `Modelo`, `Precio`, `Talla`, `Color`, `Marca`) VALUES ('$Codigo', '$Cantidad', '$Tipo', '$Modelo', '$Precio', '$Talla', '$Color', '$Marca')";
+            $cadena = "INSERT INTO `Pais`(`Nombre`) VALUES ('$Nombre')";
             $result = mysqli_query($con, $cadena);
             return 'ok';
         } catch (Throwable $th) {
@@ -44,12 +44,12 @@ class Clase_Ropa
             $con->close();
         }
     }
-    public function actualizar($RopaId, $Codigo, $Cantidad, $Tipo, $Modelo, $Precio, $Talla, $Color, $Marca)
+    public function actualizar($PaisId, $Nombre)
     {
         try {
             $con = new Clase_Conectar_Base_Datos();
             $con = $con->ProcedimientoConectar();
-            $cadena = "UPDATE `ropa` SET `Codigo`='$Codigo',`Cantidad`='$Cantidad',`Tipo`='$Tipo',`Modelo`='$Modelo',`Precio`='$Precio',`Talla`='$Talla',`Color`='$Color',`Marca`='$Marca' WHERE `RopaId`='$RopaId'";
+            $cadena = "UPDATE `Pais` SET `Nombre`='$Nombre' WHERE `PaisId`='$PaisId'";
             $result = mysqli_query($con, $cadena);
             return "ok";
         } catch (Throwable $th) {
@@ -58,12 +58,12 @@ class Clase_Ropa
             $con->close();
         }
     }
-    public function eliminar($RopaId)
+    public function eliminar($PaisId)
     {
         try {
             $con = new Clase_Conectar_Base_Datos();
             $con = $con->ProcedimientoConectar();
-            $cadena = "DELETE FROM `ropa` WHERE RopaId=$RopaId";
+            $cadena = "delete from Pais where PaisId=$PaisId";
             $result = mysqli_query($con, $cadena);
             return "ok";
         } catch (Throwable $th) {
